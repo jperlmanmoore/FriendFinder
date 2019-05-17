@@ -1,7 +1,8 @@
+//routes
 app.get("/", function(req, res) {
-    res.send("");
-  });
-  
-  app.get("/", function(req, res) {
-    res.send("");
-  });
+  res.sendFile(path.join(__dirname, "view.html"));
+});
+
+app.get("/survey", function(req, res) {
+  res.sendFile(path.join(__dirname, "view.html"));
+});
