@@ -1,10 +1,30 @@
-const path = require("path");
+// require friends.js
 
-//routes
-app.get("/api/friends", function(req, res) {
-    res.sendFile(path.join(__dirname, "view.html"));
-  });
-  
-  app.post("/api/friends", function(req, res) {
-    res.sendFile(path.join(__dirname, "view.html"));
-  });
+app.get("/api/characters/:character", function(req, res) {
+  var chosen = req.params.character;
+
+  console.log(chosen);
+
+  for (var i = 0; i < characters.length; i++) {
+    if (chosen === characters[i].routeName) {
+      return res.json(characters[i]);
+    }
+  }
+
+  return res.json(false);
+});
+
+// Create New Characters - takes in JSON input
+app.post("/api/characters", function(req, res) {
+  // req.body hosts is equal to the JSON post sent from the user
+  // This works because of our body parsing middleware
+  var newcharacter = req.body;
+
+  console.log(newcharacter);
+
+  // We then add the json the user sent to the character array
+  characters.push(newcharacter);
+
+  // We then display the JSON to the users
+  res.json(newcharacter);
+});
