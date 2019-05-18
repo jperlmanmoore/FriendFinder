@@ -15,3 +15,9 @@ app.use(express.json());
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
+
+
+
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
