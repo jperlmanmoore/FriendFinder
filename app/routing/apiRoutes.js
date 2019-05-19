@@ -10,8 +10,9 @@ module.exports = function(app) {
 
   // Create New friends - takes in JSON input
   app.post("/api/friends", function(req, res) {
+    //if validated
     
-    
+
 
   });
 
