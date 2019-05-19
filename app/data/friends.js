@@ -67,3 +67,5 @@ const friendsArray = [
         ]
     }
 ];
+
+module.exports = friends;
