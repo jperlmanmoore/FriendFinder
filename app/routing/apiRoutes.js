@@ -1,22 +1,18 @@
 // require friends.js
-const friends = require("..data/friends/js");
+const friends = require(".data/friends/js");
 
-module.exports = function(app) {
+module.exports = app => {
 
-  app.get("/api/friends", function(req, res) {
+  app.get("/api/friends", (req, res) => {
     res.json(friends);
   });
   
 
   // Create New friends - takes in JSON input
-  app.post("/api/friends", function(req, res) {
+  app.post("/api/friends", (req, res) => {
     //if validated
-    
-
-
   });
-
   
-}
+};
 
 

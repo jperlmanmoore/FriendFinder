@@ -1,13 +1,13 @@
 const path = require("path");
 
-module.exports = function (app) {
+module.exports = app => {
 
   //routes
-  app.get("/survey", function (req, res) {
+  app.get("/survey", (req, res) => {
     res.sendFile(path.join(__dirname, "/../public/survey.html"));
   });
 
-  app.get("*", function (req, res) {
+  app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/home.html"))
   });
 };

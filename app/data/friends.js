@@ -68,4 +68,4 @@ const friendsArray = [
     }
 ];
 
-module.exports = friends;
+module.exports = friendsArray;
