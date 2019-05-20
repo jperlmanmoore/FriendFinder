@@ -155,13 +155,14 @@
 
             <footer class="footer">
                 <div class="container">
-                    <a href="/api/friends">API Friends</a> | <a href="https://github.com/jperlmanmoore/FriendFinder">Github</a>
+                    <a href="/api/friends">API Friends</a> | <a
+                        href="https://github.com/jperlmanmoore/FriendFinder">Github</a>
                 </div>
             </footer>
 
             <!-- need a submit button -->
             <div>
-                <button type="button" class="btn btn-lg text-success">Submit</button>              </a>
+                <button type="button" id="submit" class="btn btn-lg text-success">Submit</button> </a>
             </div>
 
             <!-- need a modal -->
@@ -173,8 +174,8 @@
                             <hr>
                         </div>
                         <div>
-                        <h2 id="matchName"></h2>
-                        <img id="matchImage"></img>
+                            <h2 id="matchName"></h2>
+                            <img id="matchImage"></img>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -182,29 +183,74 @@
                     </div>
                 </div>
             </div>
-    </div>    
-   
+    </div>
+
 </body>
 
 </html>
 
 <script type="text/javascript">
+    $('#submit').on("click", e => {
+        e.preventDefault();
+        console.log("submit clicked");
+        
 
-$('#submit').on("click", e => {
-    e.preventDefault();
+        $.post("/api/friends", friendsArray, data => {
+            if (data) {                
+            // new user responses to Array
+            newUserResponses();
 
-    // validate
+            // modalInfo();
 
-    //what to do with info entered
-$.post("/api/friends", friendsArray, (data) => {
-    console.log("yay!");
-})
+            };
+            
+            clear();
 
-    //if not all filled alert
+        });
+    });
+
+    // const modalInfo = () => {
+    //     $("#mymodal").empty();
+    //     $("matchName").push("");
+    //     $("matchImg").push("");
+    //     $("#myModal").modal("toggle");
+    // };
+
+    const newUserResponses = () => {
+        const newUserArray = [];
+        $("#Q1").push("newUserArray");
+        $("#Q2").push("newUserArray");
+        $("#Q3").push("newUserArray");
+        $("#Q4").push("newUserArray");
+        $("#Q5").push("newUserArray");
+        $("#Q6").push("newUserArray");
+        $("#Q7").push("newUserArray");
+        $("#Q8").push("newUserArray");
+        $("#Q9").push("newUserArray");
+        $("#Q10").push("newUserArray");
+        return newUserArray[','];
+    }
+
     
-    //else show the match friend
-});
 
-//reset form
+    
 
+    const clear = () => {
+        $("#name").val("");
+        $("#img").val("");
+        $("#Q1").val("");
+        $("#Q2").val("");
+        $("#Q3").val("");
+        $("#Q4").val("");
+        $("#Q5").val("");
+        $("#Q6").val("");
+        $("#Q7").val("");
+        $("#Q8").val("");
+        $("#Q9").val("");
+        $("#Q10").val("");
+    }
+
+
+
+    
 </script>

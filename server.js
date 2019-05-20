@@ -13,14 +13,3 @@ require("./app/routing/htmlRoutes")(app);
 
 
 app.listen(PORT, () => console.log("App listening on PORT " + PORT));
-
-
-
-
-
-
-
-
-// $('#myModal').on('shown.bs.modal', function () {
-//   $('#myInput').trigger('focus')
-// })
