@@ -196,7 +196,9 @@ $('#submit').on("click", e => {
     // validate
 
     //what to do with info entered
-
+$.post("/api/friends", friendsArray, (data) => {
+    console.log("yay!");
+})
 
     //if not all filled alert
     
