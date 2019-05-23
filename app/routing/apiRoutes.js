@@ -9,8 +9,23 @@ module.exports = app => {
 
   // Create New friends - takes in JSON input
   app.post("/api/friends", (req, res) => {
-    console.log("Yay!");
-    res.json(true);
+    console.log("a");
+
+    const match = {
+      name: "",
+      img: "",
+      diff: 10,
+    };
+
+    const absDiff = 0;
+
+    // for loop
+
+    // Math.abs(a-b)
+
+
+    
+    friends.push(user)
   });
   
 };

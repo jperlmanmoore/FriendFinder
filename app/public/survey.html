@@ -189,35 +189,38 @@
 
 </html>
 
+
 <script type="text/javascript">
     $('#submit').on("click", e => {
         e.preventDefault();
         console.log("submit clicked");
-        
 
-        $.post("/api/friends", friendsArray, data => {
-            if (data) {                
-            // new user responses to Array
-            newUserResponses();
+        const URL = window.location.origin
+        $.post("/api/friends", newUserArray, data => {
+            if (data) {
+                // new user responses to Array
+                newUserResponses();
 
-            // modalInfo();
+                // modalInfo();
 
             };
-            
-            clear();
+
+
 
         });
     });
 
-    // const modalInfo = () => {
-    //     $("#mymodal").empty();
-    //     $("matchName").push("");
-    //     $("matchImg").push("");
+    
+
+    //  const modalInfo = () => {
+    //     $("#matchName").text(data);
+    //     $("#matchImg").attr("src");
     //     $("#myModal").modal("toggle");
     // };
 
-    const newUserResponses = () => {
-        const newUserArray = [];
+    const newUserArray = [];
+
+    const userResp = () => {
         $("#Q1").push("newUserArray");
         $("#Q2").push("newUserArray");
         $("#Q3").push("newUserArray");
@@ -228,12 +231,8 @@
         $("#Q8").push("newUserArray");
         $("#Q9").push("newUserArray");
         $("#Q10").push("newUserArray");
-        return newUserArray[','];
-    }
+    };
 
-    
-
-    
 
     const clear = () => {
         $("#name").val("");
@@ -248,9 +247,7 @@
         $("#Q8").val("");
         $("#Q9").val("");
         $("#Q10").val("");
-    }
+    };
 
-
-
-    
+    clear();
 </script>
