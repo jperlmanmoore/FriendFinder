@@ -195,6 +195,9 @@
         e.preventDefault();
         console.log("submit clicked");
 
+        // validate
+        validate();
+
         const URL = window.location.origin
         $.post("/api/friends", newUserArray, data => {
             if (data) {
@@ -202,11 +205,7 @@
                 newUserResponses();
 
                 // modalInfo();
-
             };
-
-
-
         });
     });
 
@@ -233,6 +232,21 @@
         $("#Q10").push("newUserArray");
     };
 
+    const valididate = () => {
+            const valid = true;
+            $("form").each(() => {
+                if (this.val() === "") {
+                    valid = false;
+                }
+            });
+
+            $("img").each(() => {
+                if ($(this).val() === "") {
+                    valid = false;
+                }
+            });
+            return valid;
+        };
 
     const clear = () => {
         $("#name").val("");
