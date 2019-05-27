@@ -7,12 +7,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
 </head>
 
 <body>
@@ -25,18 +23,19 @@
         <form>
             <div class="form-group">
                 <label for="name">Name (Required)</label>
-                <textarea class="form-control" required id="name" rows="1"></textarea>
+                <textarea class="form-control" id="name" rows="1"></textarea>
             </div>
             <div class="form-group">
                 <label for="image">Link to a Photo Image (Required)</label>
-                <input type="file" class="form-control-file" required id="image">
+                <input type="file" class="form-control-file" id="image">
             </div>
             <hr>
 
             <div class="form-group">
                 <h3>Question 1</h3>
                 <label>A hotdog is a sandwich.</label>
-                <select id="Q1" class="form-control">
+                <select id="Q1" class="form-control Qs">
+                    <option value=""></option>
                     <option value="1">1 (strong disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -48,7 +47,8 @@
             <div class="form-group">
                 <h3>Question 2</h3>
                 <label>Peanut butter is butter.></label>
-                <select id="Q2" class="form-control">
+                <select id="Q2" class="form-control Qs">
+                    <option value=""></option>
                     <option value="1">1 (strong disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -60,7 +60,8 @@
             <div class="form-group">
                 <h3>Question 3</h3>
                 <label>Mythical creatures exist, just hiding really well.</label>
-                <select id="Q3" class="form-control">
+                <select id="Q3" class="form-control Qs">
+                    <option value=""></option>
                     <option value="1">1 (strong disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -72,7 +73,8 @@
             <div class="form-group">
                 <h3>Question 4</h3>
                 <label>It would be cool to have a clone.</label>
-                <select id="Q4" class="form-control" required>
+                <select id="Q4" class="form-control Qs" required>
+                    <option value=""></option>
                     <option value="1">1 (strong disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -84,7 +86,8 @@
             <div class="form-group">
                 <h3>Question 5</h3>
                 <label>You know weird facts like, a duel among three people is called a truel.</label>
-                <select id="Q5" class="form-control" required>
+                <select id="Q5" class="form-control Qs" required>
+                    <option value=""></option>
                     <option value="1">1 (strong disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -96,7 +99,8 @@
             <div class="form-group">
                 <h3>Question 6</h3>
                 <label>You snort when you laugh.</label>
-                <select id="Q6" class="form-control" required>
+                <select id="Q6" class="form-control Qs" required>
+                    <option value=""></option>
                     <option value="1">1 (strong disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -108,7 +112,8 @@
             <div class="form-group">
                 <h3>Question 7</h3>
                 <label>You like dogs.</label>
-                <select id="Q7" class="form-control surveyQs" required>
+                <select id="Q7" class="form-control Qs" required>
+                    <option value=""></option>
                     <option value="1">1 (strong disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -120,7 +125,8 @@
             <div class="form-group">
                 <h3>Question 8</h3>
                 <label>You like cats.</label>
-                <select id="Q8" class="form-control surveyQs" required>
+                <select id="Q8" class="form-control Qs" required>
+                    <option value=""></option>
                     <option value="1">1 (strong disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -132,7 +138,8 @@
             <div class="form-group">
                 <h3>Question 9</h3>
                 <label>You keep things neat and tidy.</label>
-                <select id="Q9" class="form-control" required>
+                <select id="Q9" class="form-control Qs" required>
+                    <option value=""></option>
                     <option value="1">1 (strong disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -144,7 +151,8 @@
             <div class="form-group">
                 <h3>Question 10</h3>
                 <label>You think you can read the minds of other.</label>
-                <select id="Q10" class="form-control" required>
+                <select id="Q10" class="form-control Qs" required>
+                    <option value=""></option>
                     <option value="1">1 (strong disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -160,13 +168,13 @@
                 </div>
             </footer>
 
-            <!-- need a submit button -->
+            <!--submit button -->
             <div>
-                <button type="button" id="submit" class="btn btn-lg text-success">Submit</button> </a>
+                <button type="button" id="submit" class="btn btn-lg text-secondary">Submit</button> </a>
             </div>
 
-            <!-- need a modal -->
-            <div id="mymodal" class="modal" tabindex="-1" role="dialog">
+            <!-- modal -->
+            <div id="myModal" class="modal" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -189,9 +197,34 @@
 
 </html>
 
-
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
 <script type="text/javascript">
-    const validate = () => {
+    
+
+    const clear = () => {
+        $("#name").val(""),
+            $("#image").val("")
+            $("#Q1").val(""),
+            $("#Q2").val(""),
+            $("#Q3").val(""),
+            $("#Q4").val(""),
+            $("#Q5").val(""),
+            $("#Q6").val(""),
+            $("#Q7").val(""),
+            $("#Q8").val(""),
+            $("#Q9").val(""),
+            $("#Q10").val("")
+    };
+
+    $("#submit").on("click", e => {
+        e.preventDefault();
+        console.log("submit clicked");
+
+        const validate = () => {
         let valid = true;
         if ($("#name").val() === "") {
             valid = false;
@@ -201,18 +234,11 @@
             valid = false;
         };
 
+        if ($("Q1").val() ==="") {
+            valid = false;
+        }
         return valid;
     };
-
-    const clear = () => {
-        $("form-group").val("");
-    };
-
-
-
-    $("#submit").on("click", e => {
-        e.preventDefault();
-        console.log("submit clicked");
 
         validate();
 
@@ -233,7 +259,7 @@
                 $("#Q9").val(),
                 $("#Q10").val()
             ]
-        }]; 
+        }];
 
         console.log(userResp);
 
@@ -241,7 +267,7 @@
             if (data) {
                 $("#matchName").text(data.name);
                 $("#matchImg").attr("src", data.img);
-                $("#myModal").modal("toggle");
+                $("#myModal").modal("show");
                 clear();
             } else {
                 alert("Please fill in all required answers. Thanks!")

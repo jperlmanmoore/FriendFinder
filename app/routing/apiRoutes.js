@@ -10,22 +10,35 @@ module.exports = app => {
   // Create New friends - takes in JSON input
   app.post("/api/friends", (req, res) => {
 
-    let absDiff = 0;
+    const diff = 0;
 
-    const matchMade = 0
-
+    const newUser = req.body;
+    const newUserScore = newUser.scores;
+    
+    const friendMatch = [{
+      name: "",
+      img: "",
+      scores: 50
+    }];
+  
     const matchScore = () => {
+      diff = 0;
       for (let i = 0; i < friends.scores; i++) {
-        absDiff = 0;
-        for (let j = 0; j < newUser.length; j++) {
-          absDiff += Math.abs(friends[i].score[i] - newUser.score[j])
-
+        for (let j = 0; j < newUserScore.length; j++) {
+          diff += Math.abs(friends[i].score[j] - newUserScore[j]);
+          
+          if (diff <= friendMatch.scores) {
+            friendMatch.name = friends[i].name;
+            friendMatch.photo = friends[i].img;
+            friendMatch.diff = diff;
+          }
         }
       }
     };
 
     matchScore();
-
+    // friends.push(newFriend);
+    res.json(friendMatch);
 
   });
 };
