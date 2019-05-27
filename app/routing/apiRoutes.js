@@ -21,23 +21,21 @@ module.exports = app => {
       scores: 50
     }];
   
-    const matchScore = () => {
-      diff = 0;
       for (let i = 0; i < friends.scores; i++) {
+        diff = 0;
         for (let j = 0; j < newUserScore.length; j++) {
-          diff += Math.abs(friends[i].score[j] - newUserScore[j]);
-          
+          diff += Math.abs(parseInt(newUserScore[j]) - parseInt(friends[i].scores[i]));
           if (diff <= friendMatch.scores) {
             friendMatch.name = friends[i].name;
             friendMatch.photo = friends[i].img;
             friendMatch.diff = diff;
           }
         }
-      }
-    };
+      };
 
-    matchScore();
-    // friends.push(newFriend);
+
+    friends.push(newUser);
+    
     res.json(friendMatch);
 
   });
