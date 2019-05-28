@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <label for="image">Link to a Photo Image (Required)</label>
-                <input type="file" class="form-control-file" id="image">
+                <textarea class="form-control" id="img" rows="1"></textarea>
             </div>
             <hr>
 
@@ -183,7 +183,7 @@
                         </div>
                         <div>
                             <h2 id="matchName"></h2>
-                            <img id="matchImage">
+                            <img id="matchImage" style="width: 50px; height: 50px">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -236,7 +236,7 @@
 
         const userResp = {
             name: $("#name").val().trim(),
-            img: $("#image").val().trim(),
+            img: $("#image").val(),
             scores: [
                 $("#Q1").val(),
                 $("#Q2").val(),

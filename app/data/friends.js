@@ -1,7 +1,7 @@
 const friendsArray = [
     {
         name: "Jennifer",
-        img: "#",
+        img: "https://giphy.com/gifs/JIX9t2j0ZTN9S/html5",
         scores: [
             5,
             5,
@@ -19,7 +19,7 @@ const friendsArray = [
 
     {
         name: "Zack",
-        img: "https://giphy.com/gifs/a8Iz6zxpIYf9m/html5",
+        img: "https://giphy.com/gifs/9Vvoj75o3ZsK6TRUqH/html5",
         scores: [
             4,
             5,
@@ -54,8 +54,8 @@ const friendsArray = [
     },
 
     {
-        name: "Ping",
-        img: "https://giphy.com/gifs/fiT4tbBXvGm6Q/html5",
+        name: "Ping Pong",
+        img: "https://giphy.com/gifs/nR4L10XlJcSeQ/html5",
         scores: [
             4,
             2,
