@@ -10,29 +10,37 @@ module.exports = app => {
   // Create New friends - takes in JSON input
   app.post("/api/friends", (req, res) => {
 
-    const diff = 0;
+    let diff = 0;
 
+    console.log(req.body);
     const newUser = req.body;
     const newUserScore = newUser.scores;
     
-    const friendMatch = [{
+    const friendMatch = {
       name: "",
       img: "",
       scores: 50
-    }];
-  
-      for (let i = 0; i < friends.scores; i++) {
+    };
+    
+    let currBestMatch = 50;
+
+    console.log("starting search");
+      for (let i = 0; i < friends.length; i++) {
         diff = 0;
-        for (let j = 0; j < newUserScore.length; j++) {
-          diff += Math.abs(parseInt(newUserScore[j]) - parseInt(friends[i].scores[i]));
-          if (diff <= friendMatch.scores) {
+        console.log(friends[i].name);
+        console.log(JSON.stringify(newUser));
+        for (let j = 0; j < newUser.scores.length; j++) {
+          console.log(newUserScore[i] + "" + friends[i].scores[j]);
+          diff += Math.abs(parseInt(newUserScore[j]) - parseInt(friends[i].scores[j]));
+          };
+          if (diff <= friendMatch.scores && diff <= currBestMatch) {
             friendMatch.name = friends[i].name;
             friendMatch.photo = friends[i].img;
             friendMatch.diff = diff;
-          }
+            console.log(`Match found ${friendMatch.name} ${friendMatch.diff}`);
+            currBestMatch = diff;
         }
       };
-
 
     friends.push(newUser);
     

@@ -183,7 +183,7 @@
                         </div>
                         <div>
                             <h2 id="matchName"></h2>
-                            <img id="matchImage"></img>
+                            <img id="matchImage">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -203,11 +203,10 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
 <script type="text/javascript">
-    
     const clear = () => {
         $("#name").val(""),
             $("#image").val("")
-            $("#Q1").val(""),
+        $("#Q1").val(""),
             $("#Q2").val(""),
             $("#Q3").val(""),
             $("#Q4").val(""),
@@ -224,20 +223,18 @@
         console.log("submit clicked");
 
         const validate = () => {
-        let valid = true;
-        if ($("#name").val() === "") {
-            valid = false;
+            let valid = true;
+            if ($("#name").val() === "") {
+                valid = false;
+            };
+            if ($("#image").val() === "") {
+                valid = false;
+            };
         };
-
-        if ($("#image").val() === "") {
-            valid = false;
-        };
-
-    };
 
         validate();
 
-        const userResp = [{
+        const userResp = {
             name: $("#name").val().trim(),
             img: $("#image").val().trim(),
             scores: [
@@ -252,16 +249,16 @@
                 $("#Q9").val(),
                 $("#Q10").val()
             ]
-        }];
+        };
 
         console.log(userResp);
 
-        $.post("/api/friends", userResp, function(data) {
+        $.post("/api/friends", userResp, function (data) {
             if (data) {
                 $("#matchName").text(data.name);
                 $("#matchImg").attr("src", data.img);
                 $("#myModal").modal("show");
-                clear();
+                // clear();
             } else {
                 alert("Please fill in all required answers. Thanks!")
             };
