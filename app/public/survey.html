@@ -222,17 +222,17 @@
         e.preventDefault();
         console.log("submit clicked");
 
-        const validate = () => {
-            let valid = true;
-            if ($("#name").val() === "") {
-                valid = false;
-            };
-            if ($("#image").val() === "") {
-                valid = false;
-            };
-        };
+        // const validate = () => {
+        //     let valid = true;
+        //     if ($("#name").val() === "") {
+        //         valid = false;
+        //     };
+        //     if ($("#image").val() === "") {
+        //         valid = false;
+        //     };
+        // };
 
-        validate();
+        // validate();
 
         const userResp = {
             name: $("#name").val().trim(),
@@ -258,7 +258,7 @@
                 $("#matchName").text(data.name);
                 $("#matchImg").attr("src", data.img);
                 $("#myModal").modal("show");
-                // clear();
+                clear();
             } else {
                 alert("Please fill in all required answers. Thanks!")
             };
