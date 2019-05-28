@@ -1,7 +1,7 @@
 const friendsArray = [
     {
         name: "Jennifer",
-        img: "https://giphy.com/gifs/JIX9t2j0ZTN9S/html5",
+        img: "../images/winkcat.jpg",
         scores: [
             5,
             5,
@@ -19,7 +19,7 @@ const friendsArray = [
 
     {
         name: "Zack",
-        img: "https://giphy.com/gifs/9Vvoj75o3ZsK6TRUqH/html5",
+        img: "../images/glassescat.jpg",
         scores: [
             4,
             5,
@@ -37,7 +37,7 @@ const friendsArray = [
 
     {
         name: "Napoleon",
-        img: "https://giphy.com/gifs/FTwBozL30KFNe/html5",
+        img: "../images/streetcat.jpg",
         scores: [
            3,
            2,
@@ -55,7 +55,7 @@ const friendsArray = [
 
     {
         name: "Ping Pong",
-        img: "https://giphy.com/gifs/nR4L10XlJcSeQ/html5",
+        img: "../images/weirdcat.jpg",
         scores: [
             4,
             2,
