@@ -1,7 +1,7 @@
 const friendsArray = [
     {
         name: "Jennifer",
-        img: "../images/winkcat.jpg",
+        img: "../images/glassescat.jpg",
         scores: [
             5,
             5,

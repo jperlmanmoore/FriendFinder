@@ -20,7 +20,7 @@
         <hr>
 
         <h2>About You</h2>
-        <form>
+        <form id="onlyForm">
             <div class="form-group">
                 <label for="name">Name (Required)</label>
                 <textarea class="form-control" id="name" rows="1"></textarea>
@@ -183,7 +183,7 @@
                         </div>
                         <div>
                             <h2 id="matchName"></h2>
-                            <img id="matchImage" style="width: 50px; height: 50px">
+                            <img id="matchImg" style="width: 150px; height: 150px">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -205,7 +205,7 @@
 <script type="text/javascript">
     const clear = () => {
         $("#name").val(""),
-            $("#image").val("")
+            $("#img").val("")
         $("#Q1").val(""),
             $("#Q2").val(""),
             $("#Q3").val(""),
@@ -222,47 +222,83 @@
         e.preventDefault();
         console.log("submit clicked");
 
-        // const validate = () => {
-        //     let valid = true;
-        //     if ($("#name").val() === "") {
-        //         valid = false;
-        //     };
-        //     if ($("#image").val() === "") {
-        //         valid = false;
-        //     };
-        // };
-
-        // validate();
-
-        const userResp = {
-            name: $("#name").val().trim(),
-            img: $("#image").val(),
-            scores: [
-                $("#Q1").val(),
-                $("#Q2").val(),
-                $("#Q3").val(),
-                $("#Q4").val(),
-                $("#Q5").val(),
-                $("#Q6").val(),
-                $("#Q7").val(),
-                $("#Q8").val(),
-                $("#Q9").val(),
-                $("#Q10").val()
-            ]
+        const validate = () => {
+            let valid = true;
+            if ($("#name").val() === "") {
+                valid = false;
+            };
+            if ($("#image").val() === "") {
+                valid = false;
+            };
+            if ($("#Q1").val() === "") {
+                valid = false
+            };
+            if ($("#Q2").val() === "") {
+                valid = false
+            };
+            if ($("#Q3").val() === "") {
+                valid = false
+            };
+            if ($("#Q4").val() === "") {
+                valid = false
+            };
+            if ($("#Q5").val() === "") {
+                valid = false
+            };
+            if ($("#Q6").val() === "") {
+                valid = false
+            };
+            if ($("#Q7").val() === "") {
+                valid = false
+            };
+            if ($("#Q8").val() === "") {
+                valid = false
+            };
+            if ($("#Q9").val() === "") {
+                valid = false
+            };
+            if ($("#Q10").val() === "") {
+                valid = false
+            };
+            return valid
         };
 
-        console.log(userResp);
+        if (validate()) {
 
-        $.post("/api/friends", userResp, function (data) {
-            if (data) {
-                $("#matchName").text(data.name);
-                $("#matchImg").attr("src", data.img);
-                $("#myModal").modal("show");
-                clear();
-            } else {
-                alert("Please fill in all required answers. Thanks!")
+            const userResp = {
+                name: $("#name").val().trim(),
+                img: $("#image").val(),
+                scores: [
+                    $("#Q1").val(),
+                    $("#Q2").val(),
+                    $("#Q3").val(),
+                    $("#Q4").val(),
+                    $("#Q5").val(),
+                    $("#Q6").val(),
+                    $("#Q7").val(),
+                    $("#Q8").val(),
+                    $("#Q9").val(),
+                    $("#Q10").val()
+                ]
             };
-        }); //end post
+
+            console.log(userResp);
+
+            $.post("/api/friends", userResp, function (data) {
+                if (data) {
+                    $("#matchName").text(data.name);
+                    $("#matchImg").attr("src", data.img);
+                    $("#myModal").modal("show");
+                    clear();
+                }
+            }); //end post
+
+        } else {
+            alert("Please fill all fields.")
+        };
+
+
+
 
     }); //end submit
 </script>
