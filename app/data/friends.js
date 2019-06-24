@@ -1,7 +1,7 @@
 const friendsArray = [
     {
         name: "Jennifer",
-        img: "../images/glassescat.jpg",
+        img: "../public/images/glassescat.jpg",
         scores: [
             5,
             5,
@@ -19,7 +19,7 @@ const friendsArray = [
 
     {
         name: "Zack",
-        img: "../images/glassescat.jpg",
+        img: "../public/images/glassescat.jpg",
         scores: [
             4,
             5,
@@ -37,7 +37,7 @@ const friendsArray = [
 
     {
         name: "Napoleon",
-        img: "../images/streetcat.jpg",
+        img: "../public/images/streetcat.jpg",
         scores: [
            3,
            2,
@@ -55,7 +55,7 @@ const friendsArray = [
 
     {
         name: "Ping Pong",
-        img: "../images/weirdcat.jpg",
+        img: "../public/images/weirdcat.jpg",
         scores: [
             4,
             2,

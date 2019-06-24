@@ -184,7 +184,10 @@
                         </div>
                         <div>
                             <h2 id="matchName"></h2>
-                            <img id="matchImg" style="width: 150px; height: 150px">
+                            <div id="imgMatch">
+
+
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -288,7 +291,7 @@
             $.post("/api/friends", userResp, function (data) {
                 if (data) {
                     $("#matchName").text(data.name);
-                    $("#matchImg").attr("src", data.img);
+                    $("#imgMatch").attr("src", data.img);
                     $("#myModal").modal("show");
                     clear();
                 }
@@ -297,9 +300,6 @@
         } else {
             alert("Please fill all fields.")
         };
-
-
-
 
     }); //end submit
 </script>
